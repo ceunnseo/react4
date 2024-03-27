@@ -1,38 +1,51 @@
-.App {
-  text-align: center;
+.login-button {
+  display : flex;
+  justify-content: flex-end;
+  margin : 20px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.nav-section {
+  display : flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+/*메뉴바*/
+.menu-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu-list {
+  display : flex;
+  list-style-type : none;
+}
+.menu-list li {
+  padding : 10px;
+}
+.menu-area input {
+  border-width : 0;
+  outline : none;
+}
+.search-box {
+  display : block;
+  border-bottom-style : solid;
+  border-bottom-width : 1px;
+  border-bottom-color : black;
+  position : absolute;
+  right : 20px;
+}
+.productCard {
+  transition : all 0.2 liner;
+}
+.productCard img{
+  width : 200px;
+}
+.productCard:hover {
+  transform : scale(1.1)
+}
+.login-button {
+  cursor : pointer;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.product-img {
+  display : flex;
+  justify-content: flex-end;
 }
