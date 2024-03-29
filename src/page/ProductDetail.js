@@ -24,17 +24,18 @@ const ProductDetail = () => {
     getProductDetail()
   }, [])
   return (
-    <Container>
+    <Container className = "detailContainer">
       <Row>
         <Col className = "product-img">
           <img src = {product?.img}/>
         </Col>
         <Col>
           <h3>{product?.title}</h3>
-          <div>\{product?.price}</div>
-          <div>{product?.choice === true ? "Consicious choice":""}</div>
-          <div>사이즈</div>
-          <div className = "sizeButton">
+          <h4>\{product?.price}</h4>
+          <div id = "choice">{product?.choice === true ? "Consicious choice":""}</div>
+          <h4 id = "detailProductId">사이즈</h4>
+          <div className = "detailButton">
+            <div className = "sizeButton">
             {sizeList.map((item, idx) => (
               <button
                 key = {idx}
@@ -42,9 +43,9 @@ const ProductDetail = () => {
                 className = {idx == btnActive ? "active" : ""}
                 onClick = {toggle}
               >{item}</button>
-            ))}
+            ))}</div>
+             <button className = "product-add">추가</button>
           </div> 
-          <button className = "product-add">추가</button>
         </Col>
       </Row>
     </Container>
