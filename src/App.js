@@ -7,6 +7,9 @@ import Login from './page/Login';
 import ProductDetail from './page/ProductDetail';
 import Navbar from './component/Navbar';
 import PrivateRoute from './route/PrivateRoute';
+import MainContent from './page/MainContent';
+import Header from './component/Header';
+import Footer from './component/Footer';
 
 function App() {
   const [authenticate, setAuthenticate] = useState(false)
@@ -15,12 +18,15 @@ function App() {
   }, [authenticate])
   return (
     <div>
+      <Header/>
       <Navbar/>
       <Routes>
-        <Route path="/" element={<ProductAll/>}/>
+        <Route path = "/" element={<MainContent/>}/>
         <Route path="/login" element={<Login setAuthenticate = {setAuthenticate}/>}/>
+        <Route path="/product" element={<ProductAll/>}/>
         <Route path="/product/:id" element={<PrivateRoute authenticate ={authenticate}/>}/>
       </Routes>
+      <Footer/>
     </div>
   );
 }

@@ -21,6 +21,12 @@ const ProductAll = () => {
   }, [query])
   return (
     <div>
+      <div id = "product-one-img">
+        <img src = './img/mainPic1.jpg'></img>
+      </div>
+      <div className = "category-navBar">
+        네비게이션바
+      </div>
       <Container>
         <Row>
           {productList.map((menu)=>(
