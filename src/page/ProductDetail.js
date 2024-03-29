@@ -4,6 +4,14 @@ import {useParams} from 'react-router-dom';
 import {Container, Row, Col, Dropdown} from "react-bootstrap"
 
 const ProductDetail = () => {
+  const sizeList = ["XS", "S", "M", "L", "XL"]
+  const [btnActive, setBtnActive] = useState(null);
+  const toggle = (event) => {
+    console.log("toggle",event.target.value)
+    setBtnActive(event.target.value);
+    console.log("btnActive", btnActive);
+    return event.target.value;
+  }
   let {id} = useParams();
   const [product, setProduct] = useState(null)
   const getProductDetail=async()=>{
@@ -22,21 +30,21 @@ const ProductDetail = () => {
           <img src = {product?.img}/>
         </Col>
         <Col>
-          <div>{product?.title}</div>
-          <div>{product?.price}</div>
+          <h3>{product?.title}</h3>
+          <div>\{product?.price}</div>
           <div>{product?.choice === true ? "Consicious choice":""}</div>
-          <Dropdown>
-            <Dropdown.Toggle variant="success" id="dropdown-basic">
-              사이즈 선택
-            </Dropdown.Toggle>
-
-            <Dropdown.Menu>
-              <Dropdown.Item href="#/action-1">S</Dropdown.Item>
-              <Dropdown.Item href="#/action-2">M</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">L</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-          <button>추가</button>
+          <div>사이즈</div>
+          <div className = "sizeButton">
+            {sizeList.map((item, idx) => (
+              <button
+                key = {idx}
+                value = {idx}
+                className = {idx == btnActive ? "active" : ""}
+                onClick = {toggle}
+              >{item}</button>
+            ))}
+          </div> 
+          <button className = "product-add">추가</button>
         </Col>
       </Row>
     </Container>

@@ -8,6 +8,22 @@
   url("https://db.onlinewebfonts.com/t/70f3e46b3bb904260d1b1a6e0f2edf08.svg#HM Sans Regular")format("svg");
 }
 
+@font-face {
+  font-family: "HM Sans Latin Bold";
+  src: url("https://db.onlinewebfonts.com/t/4e6e57c2a88df92df489202798f556de.eot");
+  src: url("https://db.onlinewebfonts.com/t/4e6e57c2a88df92df489202798f556de.eot?#iefix")format("embedded-opentype"),
+  url("https://db.onlinewebfonts.com/t/4e6e57c2a88df92df489202798f556de.woff2")format("woff2"),
+  url("https://db.onlinewebfonts.com/t/4e6e57c2a88df92df489202798f556de.woff")format("woff"),
+  url("https://db.onlinewebfonts.com/t/4e6e57c2a88df92df489202798f556de.ttf")format("truetype"),
+  url("https://db.onlinewebfonts.com/t/4e6e57c2a88df92df489202798f556de.svg#HM Sans Latin Bold")format("svg");
+}
+#root {
+  background-color: #FAF9F8;
+  display : flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .login-button {
   display : flex;
@@ -68,6 +84,8 @@
 .menu-area input {
   border-width : 0;
   outline : none;
+  background-color: #FAF9F8;
+  font-family: "HM Sans Regular";
 }
 .search-box {
   display : block;
@@ -171,7 +189,27 @@
 }
 .mainContent img {
   width : 960px;
+}
+.main-product-wrap {
+  position : relative;
   cursor : pointer;
+}
+
+.main-product-text {
+  font-family: "HM Sans Latin Bold";
+  font-size : 42px;
+  position : absolute;
+  top : 40%;
+  left : 5%;
+}
+.main-product-button {
+  background-color: black;
+  color : white;
+  border : none;
+  position : absolute;
+  top : 50%;
+  left : 5%;
+  height : 30px;
 }
 
 #main-desc {
@@ -197,9 +235,19 @@
   text-align : center;
 }
 
-/*상세 페이지*/
+/*상세 페이지(모든 제품이 보이는)*/
 #product-one-img img{
   width : 100%;
+}
+.product-one-wrap {
+  position : relative;
+}
+#product-one-text {
+  font-family: "HM Sans Latin Bold";
+  position : absolute;
+  top : 45%;
+  left : 10%;
+  font-size : 90px;
 }
 
 
@@ -208,16 +256,19 @@
   background-color: #E4E4E4;
   display : flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   font-family: "HM Sans Regular";
+  padding : 64px 32px;
 }
 .footer-contents {
-  margin : 0 188px;
   display : flex;
   flex-direction: row;
   justify-content: center;
 }
 .footer-info {
-  margin : 0 188px;
+  margin : 0;
+  width : 60%;
   display : flex;
   flex-direction: column;
   align-items: center;
@@ -225,7 +276,6 @@
 }
 .footer-info span {
   font-size : 11px;
-  margin : 0px 142px;
 }
 .footer-info p {
   font-size : 13px;
@@ -233,4 +283,48 @@
 }
 .footer-icon {
   margin : 24px;
+}
+.sns {
+  width : 100%;
+  display : flex;
+  flex-direction: row;
+}
+.sns li {
+  width : 48px;
+  list-style-type: none;
+  cursor : pointer;
+}
+
+/*제품 세부 페이지*/
+.sizeButton {
+  display : flex;
+  flex-direction: row;
+  flex-wrap : nowrap;
+}
+.sizeButton button {
+  width : 82px;
+  margin : 0;
+  margin : 10px;
+  margin-left : 0;
+  padding : 0;
+  background-color: transparent;
+  border : 1px solid #222222;
+
+  &.active {
+    background-color: black;
+    color : white;
+  }
+}
+
+.product-add {
+  width : 100%;
+  height : 40px;
+  border : none;
+  background-color : black;
+  color : white;
+}
+@media(max-width : 1023px) {
+  .main-product-img img {
+    content:url('../public/img/mainPic2.jpg');
+  }
 }

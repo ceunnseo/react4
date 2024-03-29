@@ -10,11 +10,16 @@ const MainContent = () => {
   return (
     <div className = "mainContent">
         <div id="main-desc">회원 혜택:3만원 이상 무료배송 & 첫구매 10% 할인</div>
-        <div>
-          <img src ='./img/mainPic1.jpg' onClick = {goProductAll}></img>
-        </div>
-        <div>
-          <img src ='./img/mainPic2.jpg' onClick = {goProductAll}></img>
+        <div className = "main-product-wrap">
+          <div className = "main-product-img">
+            <img src ='./img/mainPic1.jpg' onClick = {goProductAll}></img>
+          </div>
+          <h2 className = "main-product-text">
+            S/S 2024
+          </h2>
+          <button className = "main-product-button" onClick = {goProductAll}>
+            지금 쇼핑하기
+          </button>
         </div>
         <div id = "main-banner">
           <h3>지금 회원가입하세요</h3>

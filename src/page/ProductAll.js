@@ -21,9 +21,15 @@ const ProductAll = () => {
   }, [query])
   return (
     <div>
-      <div id = "product-one-img">
-        <img src = './img/mainPic1.jpg'></img>
+      <div className = "product-one-wrap">
+        <div id = "product-one-img">
+          <img src = './img/mainPic1.jpg'></img>
+        </div>
+        <h1 id = "product-one-text">
+          S/S 2024
+        </h1>
       </div>
+      
       <div className = "category-navBar">
         네비게이션바
       </div>
