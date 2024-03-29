@@ -20,7 +20,7 @@ const ProductAll = () => {
     getProducts()
   }, [query])
   return (
-    <div>
+    <div className = "productAll">
       <div className = "product-one-wrap">
         <div id = "product-one-img">
           <img src = './img/mainPic1.jpg'></img>
@@ -29,10 +29,7 @@ const ProductAll = () => {
           S/S 2024
         </h1>
       </div>
-      
-      <div className = "category-navBar">
-        네비게이션바
-      </div>
+      <h1 id = "productAll-title">모두 보기</h1>
       <Container>
         <Row>
           {productList.map((menu)=>(

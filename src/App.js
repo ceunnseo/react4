@@ -10,7 +10,6 @@ import PrivateRoute from './route/PrivateRoute';
 import MainContent from './page/MainContent';
 import Header from './component/Header';
 import Footer from './component/Footer';
-import UserInfo from './page/UserInfo';
 
 function App() {
   const [authenticate, setAuthenticate] = useState(false)
@@ -18,8 +17,8 @@ function App() {
     console.log("로그인 완", authenticate);
   }, [authenticate])
   return (
-    <div>
-      <Header authenticate={authenticate}/>
+    <div className = "app">
+      <Header authenticate={authenticate} setAuthenticate = {setAuthenticate}/>
       <Navbar/>
       <Routes>
         <Route path = "/" element={<MainContent/>}/>

@@ -7,7 +7,7 @@ const Login = ({setAuthenticate}) => {
     event.preventDefault();
     console.log("login user function issue");
     setAuthenticate(true)
-    navigate('/')
+    navigate('/product')
   }
   return (
     <Container>

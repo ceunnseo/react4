@@ -26,6 +26,10 @@ const MainContent = () => {
           <p>
           {`3만원 이상 무료배송\n첫 구매 10% 할인까지`}
           </p>
+          <div className = "join-btn">
+            <button>지금 가입하기</button>
+            <button>회원 혜택 살펴보기</button>
+          </div>
         </div>
     </div>
   )
