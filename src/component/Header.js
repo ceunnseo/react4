@@ -1,11 +1,17 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser,faHeart } from '@fortawesome/free-regular-svg-icons'
-import {faBagShopping, faSearch} from '@fortawesome/free-solid-svg-icons'
+import {faBagShopping, faSearch, faBars} from '@fortawesome/free-solid-svg-icons'
 import {useNavigate } from 'react-router-dom'
 
 const Header = ({authenticate, setAuthenticate}) => {
     const navigate = useNavigate()
+    const showSearchBox = () => {
+        console.log("search-box 열리기")
+    }
+    const showBars = () => {
+
+    }
     const goToLogin = () => {
         if (authenticate === false) { //로그인 안했으면 로그인 창으로
             navigate('/login')
@@ -28,6 +34,10 @@ const Header = ({authenticate, setAuthenticate}) => {
             <div> ... </div>
         </div>
 
+    <div className = "hamburger" onClick = {showBars}>
+        <FontAwesomeIcon icon={faBars} size = "2x"/>
+    </div>
+
     <div className = "logo">
         <img onClick = {goToHome} width = {60.62} src = "./img/logo.svg"/>
     </div>
@@ -45,7 +55,7 @@ const Header = ({authenticate, setAuthenticate}) => {
             <FontAwesomeIcon icon={faBagShopping} size="2x"/>
             <div>쇼핑하기</div>
         </div>
-        <div className = "search-icon">
+        <div className = "search-icon" onClick={showSearchBox}>
             <FontAwesomeIcon icon={faSearch} size = "2x"/>
         </div>
     </div>
