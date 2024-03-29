@@ -3,14 +3,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser,faHeart } from '@fortawesome/free-regular-svg-icons'
 import {faBagShopping, faSearch, faBars} from '@fortawesome/free-solid-svg-icons'
 import {useNavigate } from 'react-router-dom'
+import {useState} from 'react'
 
-const Header = ({authenticate, setAuthenticate}) => {
+const Header = ({authenticate, setAuthenticate, sidebar, setSidebar}) => {
+    const menuList = ['Women', 'Men', 'Baby', 'Kids','H&M HOME', 'Sport', 'Sale', '지속가능성']
     const navigate = useNavigate()
-    const showSearchBox = () => {
-        console.log("search-box 열리기")
-    }
     const showBars = () => {
-
+        setSidebar(sidebar === true ? false : true)
+        console.log("사이드바", sidebar);
     }
     const goToLogin = () => {
         if (authenticate === false) { //로그인 안했으면 로그인 창으로
@@ -55,7 +55,7 @@ const Header = ({authenticate, setAuthenticate}) => {
             <FontAwesomeIcon icon={faBagShopping} size="2x"/>
             <div>쇼핑하기</div>
         </div>
-        <div className = "search-icon" onClick={showSearchBox}>
+        <div className = "search-icon" onClick={showBars}>
             <FontAwesomeIcon icon={faSearch} size = "2x"/>
         </div>
     </div>
