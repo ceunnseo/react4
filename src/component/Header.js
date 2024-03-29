@@ -1,7 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser,faHeart } from '@fortawesome/free-regular-svg-icons'
-import {faBagShopping} from '@fortawesome/free-solid-svg-icons'
+import {faBagShopping, faSearch} from '@fortawesome/free-solid-svg-icons'
 import {useNavigate } from 'react-router-dom'
 
 const Header = ({authenticate, setAuthenticate}) => {
@@ -44,6 +44,9 @@ const Header = ({authenticate, setAuthenticate}) => {
         <div className = "shopping-bag">
             <FontAwesomeIcon icon={faBagShopping} size="2x"/>
             <div>쇼핑하기</div>
+        </div>
+        <div className = "search-icon">
+            <FontAwesomeIcon icon={faSearch} size = "2x"/>
         </div>
     </div>
 
