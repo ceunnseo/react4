@@ -362,6 +362,7 @@
 /*제품 세부 페이지*/
 .detailContainer{
   margin-top : 30px;
+  height: 100vh;
 }
 .sizeButton {
   display : flex;
@@ -387,6 +388,14 @@
 }
 #choice {
   color : #E50010;
+}
+.product-img {
+  display : flex;
+  justify-content: center;
+  align-items: center;
+}
+.product-img img{
+  width : 350px;
 }
 
 /*로그인 창*/
