@@ -47,19 +47,19 @@ const Header = ({sidebar, setSidebar}) => {
 
     <div className="user-info">
         <div className="login-button" onClick={goToLogin}>
-            <FontAwesomeIcon icon={faUser} size="2x"/>
+            <FontAwesomeIcon className = "login-button-icon" icon={faUser} size="2x"/>
             <div>{authenticate?"로그아웃":"로그인"}</div>
         </div>
         <div className = "likes">
-            <FontAwesomeIcon icon={faHeart} size="2x"/>
+            <FontAwesomeIcon className = "login-button-icon" icon={faHeart} size="2x"/>
             <div>즐겨찾기</div>
         </div>
         <div className = "shopping-bag">
-            <FontAwesomeIcon icon={faBagShopping} size="2x"/>
+            <FontAwesomeIcon className = "login-button-icon" icon={faBagShopping} size="2x"/>
             <div>쇼핑하기</div>
         </div>
         <div className = "search-icon" onClick={showBars}>
-            <FontAwesomeIcon icon={faSearch} size = "2x"/>
+            <FontAwesomeIcon className = "login-button-icon" icon={faSearch} size = "2x"/>
         </div>
     </div>
 

@@ -97,6 +97,9 @@
   display : flex;
   flex-direction: row;
 }
+.login-button-icon {
+  margin-right : 0.5em;
+}
 /*
 .nav-section {
   display : flex;
@@ -166,10 +169,12 @@
   position : absolute;
   right : 32px;
 }
-/*productCard*/
+/*productCard (제품별 카드)*/
 .productCard {
   width : 200px;
   cursor : pointer;
+  font-family: "HM Sans Regular";
+  margin : 0.5em;
 }
 #productCard-img-box {
   overflow : hidden;

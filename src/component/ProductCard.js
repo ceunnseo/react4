@@ -11,10 +11,10 @@ const ProductCard = ({item}) => {
       <div id = "productCard-img-box">
         <img src={item?.img}/>
       </div>
-      <div>{item?.choice === true ? "Consicious choice":""}</div>
+      <div style={{color : "#E50010"}}>{item?.choice === true ? "Consicious choice":""}</div>
       <div>{item?.title}</div>
-      <div>\{item?.price}</div>
-      <div>{item?.new === true?"신제품":""}</div>
+      <div>&#8361;{item?.price.toLocaleString()}</div>
+      <div style={{fontSize : 11}}>{item?.new === true?"신제품":""}</div>
     </div>
   )
 }
