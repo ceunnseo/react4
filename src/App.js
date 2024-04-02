@@ -20,6 +20,7 @@ function App() {
   }, [sidebar])
   return (
     <div className = "app">
+       {sidebar ? <SideMenu sidebar={sidebar} setSidebar={setSidebar}/> : null}
       <Header sidebar = {sidebar} setSidebar={setSidebar}/>
       <Navbar/>
       <Routes>

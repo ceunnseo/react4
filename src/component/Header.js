@@ -13,8 +13,7 @@ const Header = ({sidebar, setSidebar}) => {
     console.log("header", authenticate);
     const navigate = useNavigate()
     const showBars = () => {
-        setSidebar(sidebar === true ? false : true)
-        console.log("사이드바", sidebar);
+        setSidebar(true)
     }
     const goToLogin = () => {
         if (authenticate === false) { //로그인 안했으면 로그인 창으로
