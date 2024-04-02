@@ -4,9 +4,13 @@ import { faUser,faHeart } from '@fortawesome/free-regular-svg-icons'
 import {faBagShopping, faSearch, faBars} from '@fortawesome/free-solid-svg-icons'
 import {useNavigate } from 'react-router-dom'
 import {useState} from 'react'
+import {useSelector, useDispatch} from "react-redux"
 
-const Header = ({authenticate, setAuthenticate, sidebar, setSidebar}) => {
+const Header = ({sidebar, setSidebar}) => {
     const menuList = ['Women', 'Men', 'Baby', 'Kids','H&M HOME', 'Sport', 'Sale', '지속가능성']
+    const authenticate = useSelector(state=>state.auth.authenticate)
+    const dispatch = useDispatch();
+    console.log("header", authenticate);
     const navigate = useNavigate()
     const showBars = () => {
         setSidebar(sidebar === true ? false : true)
@@ -16,9 +20,9 @@ const Header = ({authenticate, setAuthenticate, sidebar, setSidebar}) => {
         if (authenticate === false) { //로그인 안했으면 로그인 창으로
             navigate('/login')
         }
-        
         else { //로그인했는데 상단 로그인 버튼을 클릭한 경우 -> 로그아웃 (홈 화면으로)
-            setAuthenticate(false)
+            //state의 authenticate 값을 true 바꿔줘야 한다.
+            dispatch({type : "LOGOUT"})
             navigate('/')
         }
       }

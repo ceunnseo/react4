@@ -3,18 +3,20 @@ import {useEffect,useState} from 'react'
 import ProductCard from '../component/ProductCard'
 import { Container, Row, Col } from "react-bootstrap"
 import { useSearchParams } from 'react-router-dom'
+import {productAction} from "../redux/actions/productAction"
+//객체를 import
+import {useDispatch, useSelector} from "react-redux";
+
 
 const ProductAll = () => {
-  const [productList, setProductList] = useState([]);
+  const productList = useSelector(state=>state.product.productList);
   const [query, setQuery] = useSearchParams();
-  const getProducts= async ()=>{
+  const dispatch = useDispatch()
+  const getProducts= ()=>{
     let searchQuery = query.get('q') || "";
     console.log("쿼리값은?",searchQuery)
-    let url = `https://my-json-server.typicode.com/ceunnseo/react4/products?q=${searchQuery}`
-    let response = await fetch(url)
-    let data = await response.json();
-    console.log(data);
-    setProductList(data);
+    //바로 store로 가지 않고 미들웨어를 호출
+    dispatch(productAction.getProducts(searchQuery))
   }
   useEffect(()=>{
     getProducts()

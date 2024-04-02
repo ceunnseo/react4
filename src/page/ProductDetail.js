@@ -2,6 +2,10 @@ import React from 'react'
 import {useEffect, useState} from 'react'
 import {useParams} from 'react-router-dom';
 import {Container, Row, Col, Dropdown} from "react-bootstrap"
+import { useSearchParams } from 'react-router-dom'
+import {productAction} from "../redux/actions/productAction"
+//객체를 import
+import {useDispatch, useSelector} from "react-redux";
 
 const ProductDetail = () => {
   const sizeList = ["XS", "S", "M", "L", "XL"]
@@ -13,12 +17,10 @@ const ProductDetail = () => {
     return event.target.value;
   }
   let {id} = useParams();
-  const [product, setProduct] = useState(null)
-  const getProductDetail=async()=>{
-    let url = `https://my-json-server.typicode.com/ceunnseo/react4/products/${id}`;
-    let response = await fetch(url);
-    let data = await response.json();
-    setProduct(data);
+  const product = useSelector(state=>state.product.selectedItem);
+  const dispatch = useDispatch();
+  const getProductDetail = async () => {
+    dispatch(productAction.getProductDetail(id));
   }
   useEffect(()=>{
     getProductDetail()
@@ -31,7 +33,7 @@ const ProductDetail = () => {
         </Col>
         <Col>
           <h3>{product?.title}</h3>
-          <h4>\{product?.price}</h4>
+          <h4>\{product?.price.toLocaleString()}</h4>
           <div id = "choice">{product?.choice === true ? "Consicious choice":""}</div>
           <h4 id = "detailProductId">사이즈</h4>
           <div className = "detailButton">

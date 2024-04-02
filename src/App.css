@@ -400,7 +400,20 @@
 
 /*로그인 창*/
 .loginContainer {
+  width : 100%;
   height : 80vh;
+  padding-left : 15%;
+  padding-right : 15%;
+  display : flex;
+  flex-direction: column;
+  align-items: center;
+}
+.loginContainer h1 {
+  font-family: "HM Sans Latin Bold";
+  color : #CC3A24;
+}
+form {
+  width : 100%;
 }
 
 .product-add {
