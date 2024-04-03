@@ -6,6 +6,7 @@ import { useSearchParams } from 'react-router-dom'
 import {productAction} from "../redux/actions/productAction"
 //객체를 import
 import {useDispatch, useSelector} from "react-redux";
+import { fetchProducts } from '../redux/reducers/productSlice'
 
 
 const ProductAll = () => {
@@ -16,7 +17,7 @@ const ProductAll = () => {
     let searchQuery = query.get('q') || "";
     console.log("쿼리값은?",searchQuery)
     //바로 store로 가지 않고 미들웨어를 호출
-    dispatch(productAction.getProducts(searchQuery))
+    dispatch(fetchProducts(searchQuery))
   }
   useEffect(()=>{
     getProducts()
