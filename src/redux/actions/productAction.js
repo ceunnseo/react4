@@ -1,4 +1,4 @@
-import { productActions } from "../reducers/productSlice";
+//import { productActions } from "../reducers/productSlice";
 //미들웨어 함수는 함수(dispatch, getState를 매개변수로)를 리턴한다.
 
 /*
@@ -15,13 +15,19 @@ function getProducts(searchQuery) {
 } createAysnThunk 를 이용하여 만든다
 */
 
+
+
+/*
 function getProductDetail(id) {
     return async (dispatch) => {
         let url = `https://my-json-server.typicode.com/ceunnseo/react4/products/${id}`;
         let response = await fetch(url);
         let data = await response.json();
-        dispatch({type : "GET_SINGLE_PRODUCT_SUCCESS", payload : {data}})
+        dispatch(productActions.getAllProducts({data}))
     }
 }
-export const productAction={getProductDetail};
+ */
+
+/*
+export const productAction={getProductDetail};*/
 //여러 개의 함수를 productAction이라는 하나의 객체에 담아 리턴

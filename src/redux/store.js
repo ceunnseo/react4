@@ -11,7 +11,7 @@ import authenticateReducer from "./reducers/authenticateReducer";
 const store = configureStore({
     reducer : {
         auth : authenticateReducer,
-        product : productReducer
+        product : productReducer,
     } //combineReducers에서 했던 것 처럼 코드 작성
 })
 

@@ -18,13 +18,15 @@ const ProductDetail = () => {
   }
   let {id} = useParams();
   const product = useSelector(state=>state.product.selectedItem);
+  console.log("detail page", product)
   const dispatch = useDispatch();
+  /*
   const getProductDetail = async () => {
     dispatch(productAction.getProductDetail(id));
   }
   useEffect(()=>{
     getProductDetail()
-  }, [])
+  }, [])*/
   return (
     <Container className = "detailContainer">
       <Row>
