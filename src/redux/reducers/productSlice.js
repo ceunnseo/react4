@@ -40,9 +40,9 @@ export const fetchDetailProducts = createAsyncThunk(
             let response = await fetch(url);
             let data = await response.json();
             console.log("fetchDetail", data)
-            return await response.json(); //promise 리턴
+            return data; //promise 리턴
         } catch(error) {
-            console.log("fetchDetail!!!!!!")
+            console.log("fetch Detail error", error.message);
             thunkApi.rejectWithValue(error.message);
         }
 })
@@ -59,8 +59,7 @@ const productSlice = createSlice({
         },
     },
     extraReducers:(builder)=>{ //외부로부터 state가 바뀌는 경우, 비동기
-        builder
-        .addCase(fetchProducts.pending, (state) => {
+        builder.addCase(fetchProducts.pending, (state) => {
             state.isLoading = true
         }) //데이터가 오는 중
         .addCase(fetchProducts.fulfilled, (state, action)=> {
@@ -81,7 +80,7 @@ const productSlice = createSlice({
         .addCase(fetchDetailProducts.rejected, (state, action)=>{
             state.isLoading = false
             state.error = action.payload
-        })
+        });
     }
 })
 

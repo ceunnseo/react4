@@ -6,6 +6,7 @@ import { useSearchParams } from 'react-router-dom'
 import {productAction} from "../redux/actions/productAction"
 //객체를 import
 import {useDispatch, useSelector} from "react-redux";
+import { fetchDetailProducts } from '../redux/reducers/productSlice';
 
 const ProductDetail = () => {
   const sizeList = ["XS", "S", "M", "L", "XL"]
@@ -20,13 +21,14 @@ const ProductDetail = () => {
   const product = useSelector(state=>state.product.selectedItem);
   console.log("detail page", product)
   const dispatch = useDispatch();
-  /*
+  
   const getProductDetail = async () => {
-    dispatch(productAction.getProductDetail(id));
+    dispatch(fetchDetailProducts(id));
   }
   useEffect(()=>{
-    getProductDetail()
-  }, [])*/
+    getProductDetail();
+  }, [])
+
   return (
     <Container className = "detailContainer">
       <Row>
